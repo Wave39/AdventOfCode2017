@@ -8,11 +8,12 @@
 
 import Foundation
 
+print ("")
 print ("Welcome to BP's Advent Of Code 2017 puzzle solver.")
 print ("Make sure to click in the Output window to enter which puzzle you would like to solve.")
 print ("")
 
-let defaultPuzzle = 2
+let defaultPuzzle = 3
 
 var puzzle = 0
 while (puzzle < 1 || puzzle > 25) {
@@ -35,6 +36,9 @@ if (puzzle == 1) {
 } else if (puzzle == 2) {
     let day02 = Day02()
     day02.solve()
+} else if (puzzle == 3) {
+    let day03 = Day03()
+    day03.solve()
 }
 
 print ("")

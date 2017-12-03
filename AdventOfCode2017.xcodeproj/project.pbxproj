@@ -13,6 +13,9 @@
 		7B100D961FD19C2800F2328D /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B100D951FD19C2800F2328D /* StringExtensions.swift */; };
 		E011DCD51FD33C3200B5ACB4 /* Day02.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011DCD41FD33C3200B5ACB4 /* Day02.swift */; };
 		E011DCD71FD33C9800B5ACB4 /* Day02PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011DCD61FD33C9800B5ACB4 /* Day02PuzzleInput.swift */; };
+		E02001041FD4352E00B0D2F0 /* Day03.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02001031FD4352E00B0D2F0 /* Day03.swift */; };
+		E02001061FD4355000B0D2F0 /* Day03PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02001051FD4355000B0D2F0 /* Day03PuzzleInput.swift */; };
+		E02001091FD43CFC00B0D2F0 /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02001081FD43CFC00B0D2F0 /* Point2D.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +38,9 @@
 		7B100D951FD19C2800F2328D /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E011DCD41FD33C3200B5ACB4 /* Day02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day02.swift; sourceTree = "<group>"; };
 		E011DCD61FD33C9800B5ACB4 /* Day02PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day02PuzzleInput.swift; sourceTree = "<group>"; };
+		E02001031FD4352E00B0D2F0 /* Day03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03.swift; sourceTree = "<group>"; };
+		E02001051FD4355000B0D2F0 /* Day03PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03PuzzleInput.swift; sourceTree = "<group>"; };
+		E02001081FD43CFC00B0D2F0 /* Point2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 		7B100D841FD17C5600F2328D /* AdventOfCode2017 */ = {
 			isa = PBXGroup;
 			children = (
+				E02001071FD43CE700B0D2F0 /* Structures */,
 				7B100D941FD19C1300F2328D /* Extensions */,
 				7B100D8F1FD19A2400F2328D /* Puzzle input */,
 				7B100D8C1FD18FF600F2328D /* Puzzles */,
@@ -80,6 +87,7 @@
 			children = (
 				7B100D8D1FD1901700F2328D /* Day01.swift */,
 				E011DCD41FD33C3200B5ACB4 /* Day02.swift */,
+				E02001031FD4352E00B0D2F0 /* Day03.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -89,6 +97,7 @@
 			children = (
 				7B100D921FD19BB400F2328D /* Day01PuzzleInput.swift */,
 				E011DCD61FD33C9800B5ACB4 /* Day02PuzzleInput.swift */,
+				E02001051FD4355000B0D2F0 /* Day03PuzzleInput.swift */,
 			);
 			path = "Puzzle input";
 			sourceTree = "<group>";
@@ -99,6 +108,14 @@
 				7B100D951FD19C2800F2328D /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E02001071FD43CE700B0D2F0 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				E02001081FD43CFC00B0D2F0 /* Point2D.swift */,
+			);
+			path = Structures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,11 +177,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B100D961FD19C2800F2328D /* StringExtensions.swift in Sources */,
+				E02001091FD43CFC00B0D2F0 /* Point2D.swift in Sources */,
 				7B100D861FD17C5600F2328D /* main.swift in Sources */,
 				E011DCD51FD33C3200B5ACB4 /* Day02.swift in Sources */,
 				7B100D931FD19BB400F2328D /* Day01PuzzleInput.swift in Sources */,
+				E02001061FD4355000B0D2F0 /* Day03PuzzleInput.swift in Sources */,
 				7B100D8E1FD1901700F2328D /* Day01.swift in Sources */,
 				E011DCD71FD33C9800B5ACB4 /* Day02PuzzleInput.swift in Sources */,
+				E02001041FD4352E00B0D2F0 /* Day03.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
