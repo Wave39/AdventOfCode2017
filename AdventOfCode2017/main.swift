@@ -13,7 +13,7 @@ print ("Welcome to BP's Advent Of Code 2017 puzzle solver.")
 print ("Make sure to click in the Output window to enter which puzzle you would like to solve.")
 print ("")
 
-let defaultPuzzle = 3
+let defaultPuzzle = 4
 
 var puzzle = 0
 while (puzzle < 1 || puzzle > 25) {
@@ -31,14 +31,17 @@ print ("")
 print ("Solving puzzle \(puzzle), please stand by...")
 
 if (puzzle == 1) {
-    let day01 = Day01()
-    day01.solve()
+    let d = Day01()
+    d.solve()
 } else if (puzzle == 2) {
-    let day02 = Day02()
-    day02.solve()
+    let d = Day02()
+    d.solve()
 } else if (puzzle == 3) {
-    let day03 = Day03()
-    day03.solve()
+    let d = Day03()
+    d.solve()
+} else if (puzzle == 4) {
+    let d = Day04()
+    d.solve()
 }
 
 print ("")
