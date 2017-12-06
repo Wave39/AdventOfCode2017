@@ -1,4 +1,4 @@
-# AdventOfCode2017
+# Advent Of Code 2017 Solution Machine
 
 This Mac OS command line application provides solutions to the puzzles on the Advent Of Code web site. 
 You will need to be running
