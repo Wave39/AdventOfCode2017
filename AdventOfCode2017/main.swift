@@ -9,17 +9,17 @@
 import Foundation
 
 print ("")
-print ("Welcome to BP's Advent Of Code 2017 puzzle solver.")
+print ("Welcome to BP's Advent Of Code 2017 Solution Machine.")
 print ("Make sure to click in the Output window to enter which puzzle you would like to solve.")
 
-let defaultPuzzle = 5
+let defaultPuzzle = 6
 
 var quitApp = false
 while !quitApp {
     var puzzle = 0
     while !quitApp && (puzzle < 1 || puzzle > 25) {
         print ("")
-        print ("Which puzzle would you like to solve? (Enter a number from 1 to 25, default of \(defaultPuzzle), or Q to quit)")
+        print ("Which puzzle would you like the Solution Machine to solve? (Enter a number from 1 to 25, default of \(defaultPuzzle), or Q to quit)")
         let response = readLine()
         if response == "q" || response == "Q" {
             quitApp = true
@@ -45,10 +45,11 @@ while !quitApp {
             Day04().solve()
         } else if puzzle == 5 {
             Day05().solve()
+        } else if puzzle == 6 {
+            Day06().solve()
         }
     }
 }
 
 print ("")
-print ("Press Enter to end the puzzle solving session")
-let _ = readLine()
+print ("Thanks for checking out my Advent Of Code 2017 Solution Machine.")
