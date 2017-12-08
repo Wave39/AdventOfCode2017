@@ -20,13 +20,15 @@ class Day07: NSObject {
     var puzzleInput: [Program] = []
     
     public func solve() {
-        let puzzleInputString = Day07PuzzleInput.puzzleInput_test1
+        let puzzleInputString = Day07PuzzleInput.puzzleInput
         puzzleInput = parseInput(str: puzzleInputString)
         calculateTowerWeights()
         
-        let solution = solveInput()
-        print ("Part 1 solution: \(solution)")
-        //print ("Part 2 solution: \(solution.1)")
+        let part1Solution = solvePart1()
+        print ("Part 1 solution: \(part1Solution)")
+        
+        let part2Solution = solvePart2()
+        print ("Part 2 solution: \(part2Solution)")
     }
 
     func parseInput(str: String) -> [Program] {
@@ -106,7 +108,7 @@ class Day07: NSObject {
         return retval
     }
     
-    func solveInput() -> String {
+    func solvePart1() -> String {
         for p in puzzleInput {
             if p.otherPrograms.count > 0 {
                 let parent = findProgramInOtherPrograms(programToFind: p.name)
@@ -118,4 +120,56 @@ class Day07: NSObject {
         
         return ""
     }
+    
+    func findOddTowerWeight(programs: [String]) -> String {
+        var dict: Dictionary<Int, [String]> = [:]
+        for p in programs {
+            let subprogram = findProgram(programToFind: p)
+            if dict[(subprogram?.towerWeight)!] == nil {
+                dict[(subprogram?.towerWeight)!] = [ p ]
+            } else {
+                dict[(subprogram?.towerWeight)!]?.append(p)
+            }
+        }
+        
+        for k in dict.keys {
+            if dict[k]?.count == 1 {
+                return (dict[k]?.first)!
+            }
+        }
+        
+        return ""
+    }
+    
+    func solvePart2() -> Int {
+        var retval = 0
+        for p in puzzleInput {
+            if p.otherPrograms.count > 0 {
+                var firstWeight = 0
+                for op in p.otherPrograms {
+                    let subprogram = findProgram(programToFind: op)
+                    if firstWeight == 0 {
+                        firstWeight = (subprogram?.towerWeight)!
+                    }
+                    
+                    if subprogram?.towerWeight != firstWeight {
+                        var pArr: [Program] = []
+                        for x in p.otherPrograms {
+                            pArr.append(findProgram(programToFind: x)!)
+                        }
+                        
+                        let oddTower = findOddTowerWeight(programs: p.otherPrograms)
+                        let oddTowerProgram = findProgram(programToFind: oddTower)
+                        let otherTower = p.otherPrograms.filter { $0 != oddTower }
+                        let otherTowerProgram = findProgram(programToFind: otherTower.first!)
+                        
+                        retval = ((oddTowerProgram?.weight)! - abs(((oddTowerProgram?.towerWeight)! - (otherTowerProgram?.towerWeight)!)))
+                    }
+                }
+            }
+        }
+
+        return retval
+    }
+    
 }
