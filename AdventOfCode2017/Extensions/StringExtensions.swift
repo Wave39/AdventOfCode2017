@@ -51,4 +51,21 @@ extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
+    func convertRange(startIdx: Int, endIdx: Int) -> Range<String.Index> {
+        let idx0 = self.index(self.startIndex, offsetBy: startIdx)
+        let idx1 = self.index(self.startIndex, offsetBy: endIdx)
+        return idx0..<idx1
+    }
+    
+    func removeCharacters(startIdx: Int, charLength: Int) -> String {
+        var newStr = self
+        for _ in 0..<charLength {
+            let idx0 = newStr.index(newStr.startIndex, offsetBy: startIdx)
+            newStr.remove(at: idx0)
+        }
+
+        return newStr
+    }
+    
 }
