@@ -20,6 +20,9 @@
 		E02001041FD4352E00B0D2F0 /* Day03.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02001031FD4352E00B0D2F0 /* Day03.swift */; };
 		E02001061FD4355000B0D2F0 /* Day03PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02001051FD4355000B0D2F0 /* Day03PuzzleInput.swift */; };
 		E02001091FD43CFC00B0D2F0 /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02001081FD43CFC00B0D2F0 /* Point2D.swift */; };
+		E03D6BC31FDD6731003046A3 /* Day10PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D6BC21FDD6731003046A3 /* Day10PuzzleInput.swift */; };
+		E03D6BC51FDD6740003046A3 /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D6BC41FDD6740003046A3 /* Day10.swift */; };
+		E03D6BC71FDD801F003046A3 /* CharacterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D6BC61FDD801F003046A3 /* CharacterExtensions.swift */; };
 		E064ED351FD81699005E9143 /* Day06PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064ED341FD81699005E9143 /* Day06PuzzleInput.swift */; };
 		E064ED371FD816A1005E9143 /* Day06.swift in Sources */ = {isa = PBXBuildFile; fileRef = E064ED361FD816A1005E9143 /* Day06.swift */; };
 		E089210A1FD6168E0004D48D /* Day04.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08921091FD6168E0004D48D /* Day04.swift */; };
@@ -57,6 +60,9 @@
 		E02001031FD4352E00B0D2F0 /* Day03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03.swift; sourceTree = "<group>"; };
 		E02001051FD4355000B0D2F0 /* Day03PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03PuzzleInput.swift; sourceTree = "<group>"; };
 		E02001081FD43CFC00B0D2F0 /* Point2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
+		E03D6BC21FDD6731003046A3 /* Day10PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10PuzzleInput.swift; sourceTree = "<group>"; };
+		E03D6BC41FDD6740003046A3 /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
+		E03D6BC61FDD801F003046A3 /* CharacterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterExtensions.swift; sourceTree = "<group>"; };
 		E064ED341FD81699005E9143 /* Day06PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day06PuzzleInput.swift; sourceTree = "<group>"; };
 		E064ED361FD816A1005E9143 /* Day06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day06.swift; sourceTree = "<group>"; };
 		E08921091FD6168E0004D48D /* Day04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day04.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 				E0095CFF1FD97E7C00166DF7 /* Day07.swift */,
 				E0AB16271FDABD3000A37ABA /* Day08.swift */,
 				E01396F01FDC138500EDA82B /* Day09.swift */,
+				E03D6BC41FDD6740003046A3 /* Day10.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 				E0095CFD1FD97E7200166DF7 /* Day07PuzzleInput.swift */,
 				E0AB16251FDABD2500A37ABA /* Day08PuzzleInput.swift */,
 				E01396EE1FDC137E00EDA82B /* Day09PuzzleInput.swift */,
+				E03D6BC21FDD6731003046A3 /* Day10PuzzleInput.swift */,
 			);
 			path = "Puzzle input";
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				7B100D951FD19C2800F2328D /* StringExtensions.swift */,
+				E03D6BC61FDD801F003046A3 /* CharacterExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,7 +235,10 @@
 				E089210A1FD6168E0004D48D /* Day04.swift in Sources */,
 				E0AB16281FDABD3000A37ABA /* Day08.swift in Sources */,
 				7B100D931FD19BB400F2328D /* Day01PuzzleInput.swift in Sources */,
+				E03D6BC31FDD6731003046A3 /* Day10PuzzleInput.swift in Sources */,
 				E02001061FD4355000B0D2F0 /* Day03PuzzleInput.swift in Sources */,
+				E03D6BC51FDD6740003046A3 /* Day10.swift in Sources */,
+				E03D6BC71FDD801F003046A3 /* CharacterExtensions.swift in Sources */,
 				E01396EF1FDC137E00EDA82B /* Day09PuzzleInput.swift in Sources */,
 				7B100D8E1FD1901700F2328D /* Day01.swift in Sources */,
 				E064ED371FD816A1005E9143 /* Day06.swift in Sources */,

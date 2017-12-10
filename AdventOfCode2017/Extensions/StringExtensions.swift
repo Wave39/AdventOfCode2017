@@ -68,4 +68,8 @@ extension String {
         return newStr
     }
     
+    var asciiArray: [UInt32] {
+        return unicodeScalars.filter{$0.isASCII}.map{$0.value}
+    }
+
 }
