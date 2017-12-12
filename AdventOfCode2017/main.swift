@@ -12,7 +12,7 @@ print ("")
 print ("Welcome to BP's Advent Of Code 2017 Solution Machine.")
 print ("Make sure to click in the Output window to enter which puzzle you would like to solve.")
 
-let defaultPuzzle = 11
+let defaultPuzzle = 12
 
 var quitApp = false
 while !quitApp {
@@ -57,6 +57,8 @@ while !quitApp {
             Day10().solve()
         } else if puzzle == 11 {
             Day11().solve()
+        } else if puzzle == 12 {
+            Day12().solve()
         }
     }
 }
