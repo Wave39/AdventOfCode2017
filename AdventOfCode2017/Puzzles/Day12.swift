@@ -15,8 +15,8 @@ class Day12: NSObject {
         let puzzleInput = Day12PuzzleInput.puzzleInput
         
         let solution = solvePuzzle(str: puzzleInput)
-        print ("Part 1 solution: \(solution)")
-        //print ("Part 2 solution: \(solution.1)")
+        print ("Part 1 solution: \(solution.0)")
+        print ("Part 2 solution: \(solution.1)")
     }
 
     func findRow(lineArray: [[String]], rowNumber: Int) -> [String] {
@@ -48,34 +48,56 @@ class Day12: NSObject {
         let row = findRow(lineArray: lineArray, rowNumber: firstElement)
         addRow(set: programSet, queue: &programQueue, row: row)
         
-        //print ("Program set is now \(programSet)")
-        //print ("Program queue is now \(programQueue)")
-        
         while programQueue.count > 0 {
             let element = programQueue.first!
-            //print ("Adding \(element) to program set")
             programSet.insert(element)
             
             let row = findRow(lineArray: lineArray, rowNumber: element)
             addRow(set: programSet, queue: &programQueue, row: row)
             
             programQueue.removeFirst()
-            //print ("Program set is now \(programSet)")
-            //print ("Program queue is now \(programQueue)")
         }
         
         return programSet
     }
 
-    func solvePuzzle(str: String) -> Int {
+    func findProgramInGroups(groups: [Set<Int>], programNumber: Int) -> Set<Int>? {
+        for g in groups {
+            if g.contains(programNumber) {
+                return g
+            }
+        }
+        
+        return nil
+    }
+    
+    func findNextNumber(lineArray: [[String]], groups: [Set<Int>]) -> Int {
+        for l in lineArray {
+            let n = Int(l[0])!
+            if findProgramInGroups(groups: groups, programNumber: n) == nil {
+                return n
+            }
+        }
+        
+        return NSNotFound
+    }
+    
+    func solvePuzzle(str: String) -> (Int, Int) {
         var lineArray: [[String]] = []
         var programGroups: [Set<Int>] = []
 
         lineArray = str.parseIntoMatrix()
         
-        let group = findGroup(lineArray: lineArray, programNumber: 0)
+        var nextNumber = findNextNumber(lineArray: lineArray, groups: programGroups)
+        while nextNumber != NSNotFound {
+            let group = findGroup(lineArray: lineArray, programNumber: nextNumber)
+            programGroups.append(group)
+            nextNumber = findNextNumber(lineArray: lineArray, groups: programGroups)
+        }
         
-        return group.count
+        let group0 = findProgramInGroups(groups: programGroups, programNumber: 0)
+        
+        return (group0!.count, programGroups.count)
     }
     
 }
