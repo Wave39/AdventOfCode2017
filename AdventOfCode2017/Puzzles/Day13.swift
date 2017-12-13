@@ -19,8 +19,8 @@ class Day13: NSObject {
     var layerDictArray: Array<Dictionary<Int, Layer>> = []
     
     public func solve() {
-        let puzzleInput = Day13PuzzleInput.puzzleInput_test1
-        //let puzzleInput = Day13PuzzleInput.puzzleInput
+        //let puzzleInput = Day13PuzzleInput.puzzleInput_test1
+        let puzzleInput = Day13PuzzleInput.puzzleInput
         
         let solution = solvePuzzle(str: puzzleInput)
         print ("Part 1 solution: \(solution.0)")
@@ -43,21 +43,12 @@ class Day13: NSObject {
     }
     
     func calculateSeverity(pLayerDict: Dictionary<Int, Layer>, maxLayer: Int, delay: Int) -> Int {
-        var layerDict = pLayerDict
         var currentLayer = 0
         var severity = -1
         
-        for k in layerDict.keys {
-            layerDict[k]?.currentDepth = 0
-            layerDict[k]?.currentDirection = 1
-        }
-        
-        for _ in 0..<delay {
-            moveScanners(layerDict: &layerDict)
-        }
-        
         while currentLayer <= maxLayer {
-            let layer = layerDict[currentLayer]
+            let state = layerDictArray[currentLayer + delay]
+            let layer = state[currentLayer]
             if layer != nil {
                 if layer?.currentDepth == 0 {
                     if severity == -1 {
@@ -67,8 +58,6 @@ class Day13: NSObject {
                     severity += (currentLayer * (layer?.maxDepth)!)
                 }
             }
-            
-            moveScanners(layerDict: &layerDict)
             
             currentLayer += 1
         }
@@ -91,10 +80,10 @@ class Day13: NSObject {
             }
         }
         
-        let upperLimit = 20000
+        let upperLimit = 5000000
         
         // build the layer dictionaries for the first N picoseconds
-        for _ in 0..<upperLimit {
+        for _ in 0...upperLimit {
             layerDictArray.append(layerDict)
             moveScanners(layerDict: &layerDict)
         }
@@ -102,9 +91,9 @@ class Day13: NSObject {
         let part1 = calculateSeverity(pLayerDict: layerDict, maxLayer: maxLayer, delay: 0)
         
         var part2 = 0
-//        while calculateSeverity(pLayerDict: layerDict, maxLayer: maxLayer, delay: part2) != -1 && part2 < upperLimit {
-//            part2 += 1
-//        }
+        while calculateSeverity(pLayerDict: layerDict, maxLayer: maxLayer, delay: part2) != -1 && part2 < upperLimit {
+            part2 += 1
+        }
         
         return (part1, part2)
     }
