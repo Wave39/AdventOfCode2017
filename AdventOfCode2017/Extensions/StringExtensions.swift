@@ -72,4 +72,18 @@ extension String {
         return unicodeScalars.filter{$0.isASCII}.map{$0.value}
     }
 
+    func convertHexToBinary() -> String {
+        var retval = ""
+        
+        for c in self {
+            var b = String(Int(String(c), radix: 16)!, radix: 2)
+            while b.count < 4 {
+                b = "0" + b
+            }
+            
+            retval = retval + b
+        }
+        
+        return retval
+    }
 }
