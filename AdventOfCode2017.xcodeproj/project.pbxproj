@@ -35,6 +35,8 @@
 		E09F49551FE2F09B0035E9D0 /* Day14.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09F49541FE2F09B0035E9D0 /* Day14.swift */; };
 		E0AB16261FDABD2500A37ABA /* Day08PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB16251FDABD2500A37ABA /* Day08PuzzleInput.swift */; };
 		E0AB16281FDABD3000A37ABA /* Day08.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB16271FDABD3000A37ABA /* Day08.swift */; };
+		E0AD8A8A1FE3FA5F00217D40 /* Day15PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AD8A891FE3FA5F00217D40 /* Day15PuzzleInput.swift */; };
+		E0AD8A8C1FE3FA6700217D40 /* Day15.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AD8A8B1FE3FA6700217D40 /* Day15.swift */; };
 		E0E200F41FD6C2E700970BC3 /* Day05.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E200F31FD6C2E700970BC3 /* Day05.swift */; };
 		E0E200F61FD6C2F300970BC3 /* Day05PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E200F51FD6C2F300970BC3 /* Day05PuzzleInput.swift */; };
 		E0E5D5C51FDEF8D300D05987 /* Day11PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E5D5C41FDEF8D300D05987 /* Day11PuzzleInput.swift */; };
@@ -83,6 +85,8 @@
 		E09F49541FE2F09B0035E9D0 /* Day14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14.swift; sourceTree = "<group>"; };
 		E0AB16251FDABD2500A37ABA /* Day08PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day08PuzzleInput.swift; sourceTree = "<group>"; };
 		E0AB16271FDABD3000A37ABA /* Day08.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day08.swift; sourceTree = "<group>"; };
+		E0AD8A891FE3FA5F00217D40 /* Day15PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day15PuzzleInput.swift; sourceTree = "<group>"; };
+		E0AD8A8B1FE3FA6700217D40 /* Day15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day15.swift; sourceTree = "<group>"; };
 		E0E200F31FD6C2E700970BC3 /* Day05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day05.swift; sourceTree = "<group>"; };
 		E0E200F51FD6C2F300970BC3 /* Day05PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day05PuzzleInput.swift; sourceTree = "<group>"; };
 		E0E5D5C41FDEF8D300D05987 /* Day11PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11PuzzleInput.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				E0844DC81FE0449F00E15522 /* Day12.swift */,
 				E022F6731FE143B7000F0073 /* Day13.swift */,
 				E09F49541FE2F09B0035E9D0 /* Day14.swift */,
+				E0AD8A8B1FE3FA6700217D40 /* Day15.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				E0844DC61FE0449500E15522 /* Day12PuzzleInput.swift */,
 				E022F6711FE143AC000F0073 /* Day13PuzzleInput.swift */,
 				E09F49521FE2F0930035E9D0 /* Day14PuzzleInput.swift */,
+				E0AD8A891FE3FA5F00217D40 /* Day15PuzzleInput.swift */,
 			);
 			path = "Puzzle input";
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				E09F49531FE2F0930035E9D0 /* Day14PuzzleInput.swift in Sources */,
 				E089210C1FD6169A0004D48D /* Day04PuzzleInput.swift in Sources */,
 				7B100D961FD19C2800F2328D /* StringExtensions.swift in Sources */,
+				E0AD8A8A1FE3FA5F00217D40 /* Day15PuzzleInput.swift in Sources */,
 				E022F6721FE143AC000F0073 /* Day13PuzzleInput.swift in Sources */,
 				E02001091FD43CFC00B0D2F0 /* Point2D.swift in Sources */,
 				E0E200F61FD6C2F300970BC3 /* Day05PuzzleInput.swift in Sources */,
@@ -262,6 +269,7 @@
 				E0E5D5C51FDEF8D300D05987 /* Day11PuzzleInput.swift in Sources */,
 				E0844DC91FE0449F00E15522 /* Day12.swift in Sources */,
 				E0AB16261FDABD2500A37ABA /* Day08PuzzleInput.swift in Sources */,
+				E0AD8A8C1FE3FA6700217D40 /* Day15.swift in Sources */,
 				E089210A1FD6168E0004D48D /* Day04.swift in Sources */,
 				E0AB16281FDABD3000A37ABA /* Day08.swift in Sources */,
 				E0E5D5C71FDEF8DD00D05987 /* Day11.swift in Sources */,
