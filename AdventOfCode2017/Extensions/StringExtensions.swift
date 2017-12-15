@@ -86,4 +86,26 @@ extension String {
         
         return retval
     }
+    
+    func convertBinaryToHashesAndDots() -> String {
+        var retval = ""
+        
+        for c in self {
+            if c == "0" {
+                retval += "."
+            } else {
+                retval += "#"
+            }
+        }
+        
+        return retval
+    }
+    
+    func replace(index: Int, newChar: Character) -> String {
+        var chars = Array(self)     // gets an array of characters
+        chars[index] = newChar
+        let modifiedString = String(chars)
+        return modifiedString
+    }
+
 }
