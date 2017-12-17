@@ -14,4 +14,13 @@ extension Character {
         return String(self).unicodeScalars.filter{$0.isASCII}.first?.value
     }
 
+    static func asciiChar(v: Int) -> Character {
+        return Character(UnicodeScalar(v)!)
+    }
+    
+    static func asciiValue(c: Character) -> Int {
+        let s = String(c).unicodeScalars
+        return Int(s[s.startIndex].value)
+    }
+    
 }

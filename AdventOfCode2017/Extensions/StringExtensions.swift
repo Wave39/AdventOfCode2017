@@ -16,6 +16,12 @@ extension String {
         return String(self[start ..< end])
     }
     
+    func substring(from: Int) -> String {
+        let start = index(startIndex, offsetBy: from)
+        let end = index(start, offsetBy: self.count - from)
+        return String(self[start ..< end])
+    }
+    
     func substring(range: NSRange) -> String {
         return substring(from: range.lowerBound, to: range.upperBound)
     }
