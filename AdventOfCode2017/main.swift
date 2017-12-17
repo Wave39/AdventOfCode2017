@@ -12,7 +12,7 @@ print ("")
 print ("Welcome to BP's Advent Of Code 2017 Solution Machine.")
 print ("Make sure to click in the Output window to enter which puzzle you would like to solve.")
 
-let defaultPuzzle = 16
+let defaultPuzzle = 17
 
 var quitApp = false
 while !quitApp {
@@ -35,6 +35,7 @@ while !quitApp {
         print ("")
         print ("Solving puzzle \(puzzle), please stand by...")
 
+        let start = DispatchTime.now()
         if puzzle == 1 {
             Day01().solve()
         } else if puzzle == 2 {
@@ -67,7 +68,14 @@ while !quitApp {
             Day15().solve()
         } else if puzzle == 16 {
             Day16().solve()
+        } else if puzzle == 17 {
+            Day17().solve()
         }
+        
+        let end = DispatchTime.now()
+        let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds
+        let timeInterval = Double(nanoTime) / 1_000_000_000
+        print("Time to evaluate puzzle \(puzzle): \(String(format: "%.3f", timeInterval)) seconds")
     }
 }
 
