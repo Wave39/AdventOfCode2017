@@ -17,7 +17,7 @@ class Day18: NSObject {
         case Add
         case Multiply
         case Modulo
-        case Recover
+        case RecoverOrReceive
         case Jump
         case Receive
     }
@@ -63,11 +63,9 @@ class Day18: NSObject {
             } else if line[0] == "mod" {
                 newInstruction.instructionType = .Modulo
             } else if line[0] == "rcv" {
-                newInstruction.instructionType = .Recover
+                newInstruction.instructionType = .RecoverOrReceive
             } else if line[0] == "jgz" {
                 newInstruction.instructionType = .Jump
-            } else if line[0] == "rcv" {
-                newInstruction.instructionType = .Receive
             }
             
             if line[1].isStringNumeric() {
@@ -131,7 +129,7 @@ class Day18: NSObject {
             } else if currentInstruction.instructionType == .Modulo {
                 let previousValue = registers[currentInstruction.parameter1String!]
                 registers[currentInstruction.parameter1String!] = previousValue! % parameter2!
-            } else if currentInstruction.instructionType == .Recover {
+            } else if currentInstruction.instructionType == .RecoverOrReceive {
                 firstReceive = true
             } else if currentInstruction.instructionType == .Jump {
                 if parameter1! > 0 {
@@ -158,6 +156,7 @@ class Day18: NSObject {
         
         var inputQueue: [[Int]] = [[], []]
         registers[1]["p"] = 1
+        var waitingForInput: [Bool] = [ false, false ]
         
         var terminateProgram = false
         while !terminateProgram {
@@ -193,7 +192,6 @@ class Day18: NSObject {
                     } else if currentInstruction.instructionType == .Modulo {
                         let previousValue = registers[pid][currentInstruction.parameter1String!]
                         registers[pid][currentInstruction.parameter1String!] = previousValue! % parameter2!
-                    } else if currentInstruction.instructionType == .Recover {
                     } else if currentInstruction.instructionType == .Jump {
                         if parameter1! > 0 {
                             programCounter[pid] += (parameter2! - 1)
@@ -203,15 +201,17 @@ class Day18: NSObject {
                         if pid == 1 {
                             program1Sends += 1
                         }
-                    } else if currentInstruction.instructionType == .Receive {
+                    } else if currentInstruction.instructionType == .RecoverOrReceive {
                         if inputQueue[pid].count == 0 {
                             programCounter[pid] -= 1
+                            waitingForInput[pid] = true
                         } else {
                             registers[pid][currentInstruction.parameter1String!] = inputQueue[pid].first!
-                            inputQueue.removeFirst()
+                            inputQueue[pid].removeFirst()
+                            waitingForInput[pid] = false
                         }
                         
-                        if inputQueue[0].count == 0 && inputQueue[1].count == 0 {
+                        if waitingForInput[0] && waitingForInput[1] {
                             terminateProgram = true
                         }
                     }
