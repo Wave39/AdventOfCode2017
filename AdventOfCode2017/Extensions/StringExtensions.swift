@@ -10,6 +10,10 @@ import Foundation
 
 extension String {
     
+    func toInt() -> Int {
+        return Int(self.trim())!
+    }
+    
     func substring(from: Int, to: Int) -> String {
         let start = index(startIndex, offsetBy: from)
         let end = index(start, offsetBy: to - from)
@@ -122,6 +126,24 @@ extension String {
         }
         
         return false
+    }
+
+    func matchesInCapturingGroups(pattern: String) -> [String] {
+        var results = [String]()
+        
+        let textRange = NSMakeRange(0, self.lengthOfBytes(using: String.Encoding.utf8))
+        
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: [])
+            let matches = regex.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: textRange)
+            
+            for index in 1..<matches[0].numberOfRanges {
+                results.append((self as NSString).substring(with: matches[0].range(at: index)))
+            }
+            return results
+        } catch {
+            return []
+        }
     }
 
 }
