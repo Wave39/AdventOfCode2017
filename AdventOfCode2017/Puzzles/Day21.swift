@@ -65,7 +65,22 @@ class Day21: NSObject {
             }
         }
         
-        return retval
+        return retval.trim()
+    }
+    
+    func getSubArray(arr: [[Character]], x: Int, y: Int, size: Int) -> [[Character]]
+    {
+        var subArray: [[Character]] = []
+        for yIndex in y..<(y + size) {
+            var lineArray: [Character] = []
+            for xIndex in x..<(x + size) {
+                lineArray.append(getCharacterAt(arr: arr, x: xIndex, y: yIndex))
+            }
+            
+            subArray.append(lineArray)
+        }
+        
+        return subArray
     }
     
     func rotateArrayClockwise(original: [[Character]]) -> [[Character]] {
@@ -113,42 +128,110 @@ class Day21: NSObject {
         return arr
     }
     
-    public func solve() {
-        let puzzleInput = Day21PuzzleInput.puzzleInput_test1
-        //let puzzleInput = Day21PuzzleInput.puzzleInput
-        let puzzleStartingPattern = Day21PuzzleInput.puzzleInput_startingPattern
+    func inputPatternRotations(arr: [[Character]]) -> Set<String> {
+        var inputPatterns: Set<String> = Set()
+        var tempArr: [[Character]] = arr
+        for _ in 0..<4 {
+            inputPatterns.insert(getString(arr: tempArr))
+            inputPatterns.insert(getString(arr: flipArrayHorizontal(original: tempArr)))
+            inputPatterns.insert(getString(arr: flipArrayVertical(original: tempArr)))
+            tempArr = rotateArrayClockwise(original: tempArr)
+        }
         
-        let part1Solution = solvePart1(str: (puzzleStartingPattern, puzzleInput))
-        print ("Part 1 solution: \(part1Solution)")
-        
-        //let part2Solution = solvePart2(str: puzzleInput)
-        //print ("Part 2 solution: \(part2Solution)")
+        return inputPatterns
     }
     
-    func solvePart1(str: (String, String)) -> Int {
+    public func solve() {
+        //let puzzleInput = Day21PuzzleInput.puzzleInput_test1
+        let puzzleInput = Day21PuzzleInput.puzzleInput
+        let puzzleStartingPattern = Day21PuzzleInput.puzzleInput_startingPattern
+        
+        let solution = solvePuzzle(str: (puzzleStartingPattern, puzzleInput))
+        print ("Part 1 solution: \(solution.0)")
+        print ("Part 2 solution: \(solution.1)")
+    }
+    
+    func solvePuzzle(str: (String, String)) -> (Int, Int) {
         var rules: Dictionary<String, String> = [:]
         for line in str.1.split(separator: "\n") {
             let arr = line.split(separator: "=")
             let leftArr = getArray(str: String(arr[0]))
             let rightStr = String(arr[1]).removeCharacters(startIdx: 0, charLength: 2)
             rules[getString(arr: leftArr)] = rightStr
-            var rotateArr = rotateArrayClockwise(original: leftArr)   // rotated 90
-            rules[getString(arr: rotateArr)] = rightStr
-            rotateArr = rotateArrayClockwise(original: rotateArr)   // rotated 180
-            rules[getString(arr: rotateArr)] = rightStr
-            rotateArr = rotateArrayClockwise(original: rotateArr)   // rotated 270
-            rules[getString(arr: rotateArr)] = rightStr
-            var flipArr = flipArrayVertical(original: leftArr)
-            rules[getString(arr: flipArr)] = rightStr
-            flipArr = flipArrayHorizontal(original: leftArr)
-            rules[getString(arr: flipArr)] = rightStr
         }
 
+        var part1Solution = 0
         var pattern = getArray(str: str.0)
-        for _ in 0..<2 {
+        for iteration in 0..<18 {
+            let patternSize = pattern.count
+            var patternStep = 3
+            if patternSize % 2 == 0 {
+                patternStep = 2
+            }
+            
+            var replacementStrings: [String] = []
+            var x = 0
+            var y = 0
+            while y < patternSize {
+                x = 0
+                while x < patternSize {
+                    let subArray = getSubArray(arr: pattern, x: x, y: y, size: patternStep)
+                    let rotations = inputPatternRotations(arr: subArray)
+                    var replacementKey: String = ""
+                    for k in rules.keys {
+                        if rotations.contains(k) {
+                            replacementKey = k
+                        }
+                    }
+                    
+                    let replacementString = rules[replacementKey]!
+                    replacementStrings.append(replacementString)
+                    x += patternStep
+                }
+                
+                y += patternStep
+            }
+            
+            let firstReplacementArray = getArray(str: replacementStrings[0])
+            let sqr = Int(sqrt(Double(replacementStrings.count)))
+            let newSize = firstReplacementArray.count * sqr
+            
+            var newPattern: [[Character]] = []
+            for _ in 0..<newSize {
+                var lineArray: [Character] = []
+                for _ in 0..<newSize {
+                    lineArray.append(".")
+                }
+                
+                newPattern.append(lineArray)
+            }
+            
+            x = 0
+            y = 0
+            for replacement in replacementStrings {
+                let rArr = getArray(str: replacement)
+                for y0 in 0..<rArr.count {
+                    for x0 in 0..<rArr.count {
+                        newPattern[y + y0][x + x0] = getCharacterAt(arr: rArr, x: x0, y: y0)
+                    }
+                }
+                
+                x += rArr.count
+                if x >= newSize {
+                    x = 0
+                    y += rArr.count
+                }
+            }
+            
+            pattern = newPattern
+            if iteration == 5 {
+                part1Solution = getPixelCount(arr: pattern)
+            }
         }
         
-        return getPixelCount(arr: pattern)
+        let part2Solution = getPixelCount(arr: pattern)
+        
+        return (part1Solution, part2Solution)
     }
     
 }
