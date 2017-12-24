@@ -37,6 +37,8 @@
 		E089210C1FD6169A0004D48D /* Day04PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089210B1FD6169A0004D48D /* Day04PuzzleInput.swift */; };
 		E08A41571FEBD75600706D81 /* Day21PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A41561FEBD75600706D81 /* Day21PuzzleInput.swift */; };
 		E08A41591FEBD75F00706D81 /* Day21.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A41581FEBD75F00706D81 /* Day21.swift */; };
+		E09B4A1F1FEFE2FC00D4F496 /* Day24PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B4A1E1FEFE2FC00D4F496 /* Day24PuzzleInput.swift */; };
+		E09B4A211FEFE30500D4F496 /* Day24.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B4A201FEFE30500D4F496 /* Day24.swift */; };
 		E09C43FA1FEE8F5C009F4FDB /* Day22PuzzleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C43F91FEE8F5C009F4FDB /* Day22PuzzleInput.swift */; };
 		E09C43FC1FEE8FC6009F4FDB /* Day22.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C43FB1FEE8FC6009F4FDB /* Day22.swift */; };
 		E09C43FF1FEE9154009F4FDB /* CharacterGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C43FE1FEE9154009F4FDB /* CharacterGrid.swift */; };
@@ -104,6 +106,8 @@
 		E089210B1FD6169A0004D48D /* Day04PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day04PuzzleInput.swift; sourceTree = "<group>"; };
 		E08A41561FEBD75600706D81 /* Day21PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21PuzzleInput.swift; sourceTree = "<group>"; };
 		E08A41581FEBD75F00706D81 /* Day21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21.swift; sourceTree = "<group>"; };
+		E09B4A1E1FEFE2FC00D4F496 /* Day24PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day24PuzzleInput.swift; sourceTree = "<group>"; };
+		E09B4A201FEFE30500D4F496 /* Day24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day24.swift; sourceTree = "<group>"; };
 		E09C43F91FEE8F5C009F4FDB /* Day22PuzzleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22PuzzleInput.swift; sourceTree = "<group>"; };
 		E09C43FB1FEE8FC6009F4FDB /* Day22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22.swift; sourceTree = "<group>"; };
 		E09C43FE1FEE9154009F4FDB /* CharacterGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGrid.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				E08A41581FEBD75F00706D81 /* Day21.swift */,
 				E09C43FB1FEE8FC6009F4FDB /* Day22.swift */,
 				E09C44021FEEDD13009F4FDB /* Day23.swift */,
+				E09B4A201FEFE30500D4F496 /* Day24.swift */,
 			);
 			path = Puzzles;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				E08A41561FEBD75600706D81 /* Day21PuzzleInput.swift */,
 				E09C43F91FEE8F5C009F4FDB /* Day22PuzzleInput.swift */,
 				E09C44001FEEDD03009F4FDB /* Day23PuzzleInput.swift */,
+				E09B4A1E1FEFE2FC00D4F496 /* Day24PuzzleInput.swift */,
 			);
 			path = "Puzzle input";
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				E02001091FD43CFC00B0D2F0 /* Point2D.swift in Sources */,
 				E09C43FC1FEE8FC6009F4FDB /* Day22.swift in Sources */,
 				E0E200F61FD6C2F300970BC3 /* Day05PuzzleInput.swift in Sources */,
+				E09B4A1F1FEFE2FC00D4F496 /* Day24PuzzleInput.swift in Sources */,
 				E0D753CF1FE6A39C0009D189 /* Day17.swift in Sources */,
 				E0095D001FD97E7C00166DF7 /* Day07.swift in Sources */,
 				E09C44031FEEDD13009F4FDB /* Day23.swift in Sources */,
@@ -333,6 +340,7 @@
 				E0CD132D1FE93987000D100C /* Day19.swift in Sources */,
 				E011DCD51FD33C3200B5ACB4 /* Day02.swift in Sources */,
 				E03AB6CF1FE56AA800DF0E55 /* Day16PuzzleInput.swift in Sources */,
+				E09B4A211FEFE30500D4F496 /* Day24.swift in Sources */,
 				E09C44011FEEDD03009F4FDB /* Day23PuzzleInput.swift in Sources */,
 				E0CD132F1FEA98E4000D100C /* Day20PuzzleInput.swift in Sources */,
 				E01396F11FDC138500EDA82B /* Day09.swift in Sources */,
